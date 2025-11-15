@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        /* ---------------- CSS BELOW ---------------- */
+
+        @import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@300;600;700&display=swap');
+
+        #footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 120px;
+            background: rgba(10, 10, 15, 0.85);
+            backdrop-filter: blur(12px);
+            border-top: 3px solid #ff4655;
+            overflow: visible;
+            z-index: 9999;
+        }
+
+        .footer-content {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100%;
+            padding: 0 40px;
+            font-family: 'Oxanium', sans-serif;
+            color: white;
+        }
+
+        .right-side {
+            display: flex;
+            align-items: center;
+            /* spacing between icons */
+        }
+
+        .action-icon {
+            height: 250px;
+            /* adjust size */
+            width: auto;
+            filter: drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.5));
+            animation: pop 3s infinite ease-in-out;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        .action-icon:hover {
+            transform: scale(1.15);
+        }
+
+        @keyframes pop {
+            0% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-6px);
+            }
+
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        .left-side {
+            display: flex;
+            align-items: center;
+            gap: 1px;
+        }
+
+
+        .left-side img {
+            height: 300px;
+            /* increased size */
+            width: auto;
+            margin-top: -80px;
+            /* adjust head lift */
+            z-index: 10000;
+            position: relative;
+        }
+
+        .left-side h1 {
+            font-size: 36px;
+            color: #ff4655;
+            margin: 0;
+            text-shadow: 0 0 12px #ff4655;
+        }
+
+        .left-side p {
+            margin: 0;
+            font-size: 16px;
+            opacity: 0.9;
+        }
+
+        .social-tag {
+            background: #ff4655;
+            padding: 10px 25px;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: bold;
+            box-shadow: 0 0 15px #ff4655;
+            animation: glow 2s infinite alternate;
+        }
+
+        @keyframes glow {
+            from {
+                box-shadow: 0 0 10px #ff4655;
+            }
+
+            to {
+                box-shadow: 0 0 25px #ff4655;
+            }
+        }
+
+        /* Animated vector elements */
+        svg {
+            position: absolute;
+            z-index: 1;
+        }
+
+        .vector1 {
+            left: -80px;
+            bottom: -20px;
+            animation: float1 12s infinite linear;
+        }
+
+        .vector2 {
+            right: -100px;
+            bottom: 10px;
+            animation: float2 10s infinite linear;
+        }
+
+        .vector3 {
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: -50px;
+            animation: rotate 20s infinite linear;
+        }
+
+        svg {
+            position: absolute;
+            z-index: 1;
+            overflow: hidden;
+            /* prevent vectors from going outside */
+        }
+
+        @keyframes float1 {
+            0% {
+                transform: translateY(0);
+                opacity: 0.5;
+            }
+
+            50% {
+                transform: translateY(-20px);
+                opacity: 0.8;
+            }
+
+            100% {
+                transform: translateY(0);
+                opacity: 0.5;
+            }
+        }
+
+        @keyframes float2 {
+            0% {
+                transform: translateX(0);
+                opacity: 0.6;
+            }
+
+            100% {
+                transform: translateX(-40px);
+                opacity: 0.6;
+            }
+        }
+
+        @keyframes rotate {
+            0% {
+                transform: translateX(-50%) rotate(0deg);
+            }
+
+            100% {
+                transform: translateX(-50%) rotate(360deg);
+            }
+        }
+
+        /* ---------------- END OF CSS ---------------- */
+    </style>
+</head>
+
+
+<body>
+
+    <!-- ---------------- HTML CONTENT ---------------- -->
+    <div id="footer">
+        <div class="footer-content">
+
+            <div class="left-side">
+                <img src="https://github.com/shadabeqbal/yt/blob/master/Elements/shooting_right-logo.png?raw=true"
+                    class="action-icon" alt="Subscribe">
+                <div>
+                    <h1>Raider Aim</h1>
+                    <p>@raideraim</p>
+                </div>
+            </div>
+
+            <div class="right-side">
+                <img src="https://github.com/shadabeqbal/yt/blob/f30a3824c170b9b5891aa241699ab5509cb8aed8/Elements/subscribe-logo.png?raw=true"
+                    class="action-icon" alt="Subscribe">
+                <img src="https://github.com/shadabeqbal/yt/blob/f30a3824c170b9b5891aa241699ab5509cb8aed8/Elements/like-logo.png?raw=true"
+                    class="action-icon" alt="Like">
+                <img src="https://raw.githubusercontent.com/shadabeqbal/yt/f30a3824c170b9b5891aa241699ab5509cb8aed8/Elements/share-logo.png"
+                    class="action-icon" alt="Share">
+            </div>
+
+
+        </div>
+
+        <!-- Animated Vector Background Elements -->
+        <svg class="vector1" width="110" height="110" viewBox="0 0 200 200" style="bottom:-40px; left:-20px;">
+            <polygon points="100,10 190,190 10,190" fill="#ff4655" opacity="0.4" />
+        </svg>
+
+        <svg class="vector2" width="120" height="120" viewBox="0 0 160 160" style="bottom:-20px;right:-20px;">
+            <circle cx="80" cy="80" r="60" stroke="#00eaff" stroke-width="6" fill="none" opacity="0.4" />
+        </svg>
+
+        <svg class="vector3" width="120" height="120" viewBox="0 0 220 220" style="bottom:-10px;">
+            <rect x="30" y="30" width="160" height="160" stroke="#ffffff" stroke-width="5" fill="none" opacity="0.3" />
+        </svg>
+    </div>
+    <!-- ---------------- END HTML ---------------- -->
+
+    <script>
+        /* ---------------- JAVASCRIPT ---------------- */
+
+        const vectors = document.querySelectorAll("svg");
+
+        vectors.forEach(v => {
+            setInterval(() => {
+                const x = (Math.random() * 10) - 5;
+                const y = (Math.random() * 10) - 5;
+                v.style.transform += ` translate(${x}px, ${y}px)`;
+            }, 5000);
+        });
+
+        /* ---------------- END JS ---------------- */
+    </script>
+
+</body>
+
+</html>
